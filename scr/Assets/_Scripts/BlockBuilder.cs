@@ -110,7 +110,7 @@ public class BlockBuilder : MonoBehaviour
     public void SendToRoom()
     {
         DontDestroyOnLoad(placeBlock);
-        parentBlock.transform.rotation = new Quaternion();
+        placeBlock.transform.rotation = new Quaternion();
         pivotObject.transform.position += Vector3.up * 0.1f * 5.0f;
         pivotObject.transform.position += Vector3.left * 100;
         MySceneManager.I.LoadSceneNAme("Room");
