@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Block Builder.unity
     guid: 5778285a58650714fb060770be46abfc
+  - enabled: 1
+    path: Assets/Scenes/Room.unity
+    guid: c7fda4f7cf7d6cb4fbed4dd7758d9c07
   m_configObjects: {}
