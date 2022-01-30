@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4960195759926709391
+--- !u!1 &1171591299193219731
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4960195759926709377}
-  - component: {fileID: 4960195759926709390}
+  - component: {fileID: 9024157218593905032}
+  - component: {fileID: 2409737074757021845}
   m_Layer: 0
-  m_Name: '- Build Manager -'
+  m_Name: '- Mouse Cursor Manager - '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4960195759926709377
+--- !u!4 &9024157218593905032
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4960195759926709391}
+  m_GameObject: {fileID: 1171591299193219731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,18 +31,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4960195759926709390
+--- !u!114 &2409737074757021845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4960195759926709391}
+  m_GameObject: {fileID: 1171591299193219731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d80eb5f4b78d4494793f5d9d214454b3, type: 3}
+  m_Script: {fileID: 11500000, guid: c46fff7b665dc484d96fef4bd8ad7e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 0
-  applyMaterial: {fileID: 2100000, guid: 6c7f04f7ee5643340ade3128067c87b7, type: 2}
-  baseMaterial: {fileID: 2100000, guid: 653d77cff29f91b4ca496722eabcd1ab, type: 2}
+  mouseCursors:
+  - {fileID: 2800000, guid: d6a3024b874a64a47b8ad5a47eb5a728, type: 3}
+  - {fileID: 2800000, guid: 9315804e581ddf547ac26940a399f53b, type: 3}
+  - {fileID: 2800000, guid: 81ef0d13fe44f074ab8c2375d771b9fe, type: 3}
+  - {fileID: 2800000, guid: f826a0048c64a3042b3c9c0c46342dbc, type: 3}
+  hotspots:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 256}
+  - {x: 0, y: 0}
+  cursorMode: 0
