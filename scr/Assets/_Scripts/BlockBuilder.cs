@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BlockBuilder : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class BlockBuilder : MonoBehaviour
 
     public GameObject prefabBaseBlock;
 
-
+    private GameObject pivotObject;
 
     [ContextMenu("Create Block")]
     void CreateBlock()
@@ -20,6 +21,8 @@ public class BlockBuilder : MonoBehaviour
 
     void CreateBlock(int _x, int _y, int _z)
     {
+        pivotObject = Instantiate(parentBlock, parentBlock.transform) as GameObject;
+
         for (int x = 0; x < _x; x++)
         {
             for (int y = 0; y < _y; y++)
@@ -27,7 +30,7 @@ public class BlockBuilder : MonoBehaviour
 
                 for (int z = 0; z < _z; z++)
                 {
-                    GameObject go = Instantiate(prefabBaseBlock, parentBlock.transform) as GameObject;
+                    GameObject go = Instantiate(prefabBaseBlock, pivotObject.transform) as GameObject;
 
                     go.transform.localScale = Vector3.one * 0.1f;
 
@@ -72,4 +75,11 @@ public class BlockBuilder : MonoBehaviour
         CreateBlock(10, 10, 10);
     }
 
+    public void SendToRoom()
+    {
+        DontDestroyOnLoad(parentBlock);
+        parentBlock.transform.rotation = new Quaternion();
+        pivotObject.transform.position += Vector3.up * 0.1f * 5.0f;
+        SceneManager.LoadScene("Room");
+    }
 }
