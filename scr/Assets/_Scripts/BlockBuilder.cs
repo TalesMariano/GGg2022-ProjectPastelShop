@@ -7,11 +7,20 @@ public class BlockBuilder : MonoBehaviour
 {
     public Vector3Int blockDimention = Vector3Int.one * 10;
 
+
+
     public GameObject parentBlock;
+    public GameObject placeBlock;
 
     public GameObject prefabBaseBlock;
 
     private GameObject pivotObject;
+
+    private void Start()
+    {
+        ClearAllBlocks();
+        //ClearChild();
+    }
 
     [ContextMenu("Create Block")]
     void CreateBlock()
@@ -63,6 +72,29 @@ public class BlockBuilder : MonoBehaviour
 
     }
 
+
+    public void ClearChild()
+    {
+        int i = 0;
+
+        //Array to hold all child obj
+        GameObject[] allChildren = new GameObject[placeBlock.transform.childCount];
+
+        //Find all child obj and store to that array
+        foreach (Transform child in placeBlock.transform)
+        {
+            allChildren[i] = child.gameObject;
+            i += 1;
+        }
+
+        //Now destroy them
+        foreach (GameObject child in allChildren)
+        {
+            DestroyImmediate(child.gameObject);
+        }
+
+    }
+
     public void MakePainelBlock()
     {
         ClearAllBlocks();
@@ -77,9 +109,14 @@ public class BlockBuilder : MonoBehaviour
 
     public void SendToRoom()
     {
-        DontDestroyOnLoad(parentBlock);
+        DontDestroyOnLoad(placeBlock);
         parentBlock.transform.rotation = new Quaternion();
         pivotObject.transform.position += Vector3.up * 0.1f * 5.0f;
-        SceneManager.LoadScene("Room");
+        pivotObject.transform.position += Vector3.left * 100;
+        MySceneManager.I.LoadSceneNAme("Room");
+
+        
     }
+
+
 }

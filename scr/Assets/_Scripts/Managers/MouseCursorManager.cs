@@ -20,8 +20,6 @@ public class MouseCursorManager : MonoBehaviour
 
     void ChangeMouseMode()
     {
-        Debug.Log("ChangeMode");
-
         switch (BuilderManager.I.mode)
         {
             case Mode.None:

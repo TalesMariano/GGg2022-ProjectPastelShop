@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af93db99af1bd3438d4a0ec223eed43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoStart: 0
+  autoStart: 1
   loopMusic: 1
   startRandomMusic: 0
   startRandomPoint: 0
