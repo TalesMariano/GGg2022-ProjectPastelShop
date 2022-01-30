@@ -24,6 +24,11 @@ public class MySceneManager : MonoBehaviour
         SceneManager.LoadScene(num);
     }
 
+    public void LoadSceneNAme(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
     public void LoadNextScene()
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;

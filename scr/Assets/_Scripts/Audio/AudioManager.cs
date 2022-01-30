@@ -15,8 +15,21 @@ public class AudioManager : MonoBehaviour
 
     public MusicList musicList;
 
-    private void Awake()
+    //Singleton
+    public static AudioManager I = null;
+    void Awake()
     {
+        if (I == null)           //Check if instance already exists
+            I = this;            //if not, set instance to this
+        else if (I != this)
+        {      //If instance already exists and it's not this:
+            //instance.LoadNext();
+            Destroy(gameObject);        //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+        }
+        DontDestroyOnLoad(gameObject);  //Sets this to not be destroyed when reloading scene
+
+        //--------------------
+
         audioSource = GetComponent<AudioSource>();
         SetMusic();
         audioSource.playOnAwake = false;
