@@ -26,13 +26,20 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.loop = loopMusic;
 
-        if(autoStart)
-            audioSource.Play();
+        if (autoStart)
+            PlayNextSong();
     }
 
     // Not optime or bug free T-T
     void SetMusic()
     {
         audioSource.clip = musicList.musicClips[0];
+    }
+
+    void PlayNextSong()
+    {
+        audioSource.clip = musicList.musicClips[Random.Range(0, musicList.musicClips.Length)];
+        audioSource.Play();
+        Invoke("PlayNextSong", audioSource.clip.length);
     }
 }
