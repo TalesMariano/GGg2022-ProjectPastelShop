@@ -10,4 +10,9 @@ public class AnimPlayAudio : MonoBehaviour
     {
         audioSource.Play();
     }
+
+    public void GoNextScene()
+    {
+        MySceneManager.I.LoadNextScene();
+    }
 }

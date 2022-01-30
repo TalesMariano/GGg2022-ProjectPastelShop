@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Block
+  - PlaceArea
+  - HoldObj
   layers:
   - Default
   - TransparentFX
