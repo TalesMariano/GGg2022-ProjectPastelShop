@@ -6,8 +6,13 @@ public class BetaBlock : MonoBehaviour
 {
     bool showDebug = true;
 
+    bool painted = false;
+
     [SerializeField]
     private Renderer rend;
+
+    [SerializeField]
+    private Collider collider;
 
     [SerializeField]
     private GameObject go;
@@ -39,13 +44,23 @@ public class BetaBlock : MonoBehaviour
 
     void BreakBlock()
     {
-        //Debug.Log("BreakBlock", gameObject);
-        Destroy(go);
+        if (painted)
+        {
+            painted = false;
+            rend.material = BuilderManager.I.baseMaterial;
+        }
+        else
+        {
+            Destroy(go);
+            collider.enabled = false;
+        }
     }
 
-    void PaintBlock()
+    public void PaintBlock()
     {
         //Debug.Log("PaintBlock", gameObject);
         rend.material = BuilderManager.I.applyMaterial;
+
+        painted = true;
     }
 }
